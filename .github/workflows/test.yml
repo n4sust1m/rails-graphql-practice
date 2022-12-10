@@ -11,4 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker compose up -d app && docker compose run app rails test test/controllers/user_controller_test.rb
+      - run: |
+          docker compose up -d app
+          docker compose run app rails test test/controllers/user_controller_test.rb
