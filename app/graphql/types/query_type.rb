@@ -13,5 +13,10 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :users, [Types::UserType]
+    def users
+      User.all
+    end
   end
 end
